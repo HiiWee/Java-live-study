@@ -1,4 +1,7 @@
-import junit.Calculator;
+package junit5;
+
+import junit5.custom.annotation.Fast;
+import junit5.custom.annotation.FastTest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

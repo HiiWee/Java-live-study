@@ -1,4 +1,6 @@
-import junit.Calculator;
+package junit5;
+
+import junit5.Calculator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
