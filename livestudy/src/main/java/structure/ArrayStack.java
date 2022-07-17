@@ -7,11 +7,12 @@ package structure;
  */
 
 public class ArrayStack {
+    private static final int SIZE = 5;
     private int[] array;
     private int index;
 
     public ArrayStack() {
-        array = new int[5];
+        array = new int[SIZE];
     }
 
     // 데이터를 넣고 인덱스 증가
@@ -55,7 +56,7 @@ public class ArrayStack {
         int[] temp = array;
 
         // 기존 사이즈에서 5 증가
-        array = new int[temp.length + 5];
+        array = new int[temp.length + SIZE];
         for (int i = 0; i < temp.length; i++) {
             array[i] = temp[i];
         }
