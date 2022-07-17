@@ -87,7 +87,7 @@ public class ListNodeTest {
     }
 
     @Test
-    @DisplayName("LinkedList: Wrong Remove Test")
+    @DisplayName("LinkedList: fail Remove Test")
     void wrongRemove() {
         // given
         ListNode nodeToAdd = new ListNode(1);
@@ -123,7 +123,7 @@ public class ListNodeTest {
     }
 
     @Test
-    @DisplayName("LinkdeList: Wrong Contains Node Test")
+    @DisplayName("LinkedList: fail Contains Node Test")
     void wrongContains() {
         // given
         ListNode nodeNotInList = new ListNode(10);

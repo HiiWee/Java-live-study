@@ -58,7 +58,7 @@ public class ArrayStackTest {
     }
 
     @Test
-    @DisplayName("ArrayStack: wrong pop test")
+    @DisplayName("ArrayStack: fail pop test")
     void wrongPop() {
         // given
         arrayStack.push(1);

@@ -64,7 +64,7 @@ public class ArrayQueueTest {
     }
 
     @Test
-    @DisplayName("ArrayQueue: wrong poll test")
+    @DisplayName("ArrayQueue: fail poll test")
     void wrongPoll() {
         // given
         arrayQueue.offer(1);

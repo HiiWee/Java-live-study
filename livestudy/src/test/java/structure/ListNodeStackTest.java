@@ -54,7 +54,7 @@ public class ListNodeStackTest {
     }
 
     @Test
-    @DisplayName("ListNodeStack: wrong pop test")
+    @DisplayName("ListNodeStack: fail pop test")
     void wrongPop() {
         // given
         listNodeStack.push(1);
