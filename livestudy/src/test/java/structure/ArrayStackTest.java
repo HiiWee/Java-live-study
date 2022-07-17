@@ -59,7 +59,7 @@ public class ArrayStackTest {
 
     @Test
     @DisplayName("ArrayStack: wrong pop test")
-    void wrongpop() {
+    void wrongPop() {
         // given
         arrayStack.push(1);
         arrayStack.push(2);
