@@ -10,13 +10,13 @@ public class BinaryTreeTest {
 
     /**
      * [트리의 구조]
-     * n1
-     * /    \
-     * n2     n3
-     * /  \    /
-     * n4  n5  n6
-     * /     / \
-     * n7    n8  n9
+     *         n1
+     *        /    \
+     *      n2      n3
+     *     /  \     /
+     *    n4  n5   n6
+     *   /    / \
+     *  n7   n8  n9
      */
     @BeforeEach
     void beforeEach() {
@@ -36,7 +36,6 @@ public class BinaryTreeTest {
     void afterEach() {
         tree.sb = new StringBuilder();
     }
-
 
     @Test
     @DisplayName("BFS test")
@@ -61,10 +60,12 @@ public class BinaryTreeTest {
         // when
         tree.recurDFS(tree.getRoot());
         String answer = tree.sb.toString();
+        System.out.println(answer);
 
         // then
         assertEquals(result, answer);
     }
+
     @Test
     @DisplayName("[번외] stack DFS test: 전위 연산(DLR)")
     void stackDFS() {
