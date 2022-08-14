@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class StreamPractice {
+public class MakeStream {
     public static void main(String[] args) {
         String[] strArr = {"aaa", "ddd", "ccc"};
         List<String> strList = Arrays.asList(strArr);
