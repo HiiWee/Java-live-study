@@ -20,6 +20,7 @@ import java.awt.event.MouseEvent;
 
 class Movable implements Runnable {
     private JLabel target;
+    public static boolean isHit;
 
     public Movable(JLabel target) {
         this.target = target;
@@ -30,7 +31,12 @@ class Movable implements Runnable {
         Point startingPoint = target.getLocation();
         while (true) {
             try {
-                Thread.sleep(20);
+                if (isHit) {
+                    Thread.sleep(1000);
+                    isHit = false;
+                } else {
+                    Thread.sleep(20);
+                }
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
@@ -38,6 +44,7 @@ class Movable implements Runnable {
             if (target.getLocation().x == 600) {
                 target.setLocation(startingPoint);
             }
+
         }
 
     }
@@ -75,7 +82,15 @@ class Shootable implements Runnable {
                 }
 
                 if (hit()) {
-
+                    Movable.isHit = true;
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                    bulletLabel.setLocation(startingPoint);
+                    target.setLocation(targetStartingPoint);
+                    flag = false;
                 }
             }
         }
@@ -84,19 +99,19 @@ class Shootable implements Runnable {
     private boolean hit() {
         Point targetLocation = target.getLocation();
         Point bulletLabelLocation = bulletLabel.getLocation();
+        double targetX = targetLocation.getX();
+        double targetY = targetLocation.getY();
+        double bulletX = bulletLabelLocation.getX();
+        double bulletY = bulletLabelLocation.getY();
 
-        if (targetLocation.getX() == bulletLabelLocation.getX()) {
-
-        }
-
-
-        return false;
+        return bulletX >= targetX && bulletX <= targetX + 80
+                && bulletY >= targetY && bulletY <= targetY + 80;
     }
 }
 
 public class Example04 extends JFrame {
 
-    public Example04() {
+    public Example04() throws InterruptedException {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(600, 600);
         Container ct = getContentPane();
@@ -138,10 +153,9 @@ public class Example04 extends JFrame {
         moveThread.start();
         shootThread.start();
 
-
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         new Example04();
     }
 
