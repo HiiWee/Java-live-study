@@ -18,4 +18,7 @@ public class TextFieldPanel extends JPanel {
         this.add(inputField);
     }
 
+    public JTextField getInputField() {
+        return inputField;
+    }
 }
