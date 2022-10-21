@@ -19,7 +19,7 @@ public class TextAreaPanel extends JPanel {
         this.add(inputArea);
     }
 
-    public JTextArea getInputArea() {
-        return inputArea;
+    public String getInputAreaText() {
+        return inputArea.getText();
     }
 }
