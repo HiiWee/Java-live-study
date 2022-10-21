@@ -4,7 +4,7 @@ public enum ActionCategory {
     SAVE, SEARCH, EXIT;
 
     /**
-     * 어떤 버튼을 눌렀는지 판별하기 위한 메소
+     * 어떤 버튼을 눌렀는지 판별하기 위한 메소드
      */
     public static ActionCategory findAction(String actionCommand) {
         if (SAVE.name().equals(actionCommand)) {
