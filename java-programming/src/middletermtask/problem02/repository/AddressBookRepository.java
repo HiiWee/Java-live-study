@@ -12,7 +12,6 @@ import java.util.List;
 public class AddressBookRepository {
     private static final AddressBookRepository instance = new AddressBookRepository();
     private static final List<Person> store = new ArrayList<>();
-
     public static AddressBookRepository getInstance() {
         return instance;
     }
@@ -20,7 +19,7 @@ public class AddressBookRepository {
     /**
      * person 저장
      */
-    public Person savePerson(Person person) {
+    public Person save(Person person) {
         store.add(person);
         return person;
     }
