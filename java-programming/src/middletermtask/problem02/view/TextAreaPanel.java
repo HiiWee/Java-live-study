@@ -22,4 +22,8 @@ public class TextAreaPanel extends JPanel {
     public String getInputAreaText() {
         return inputArea.getText();
     }
+
+    public void setInputAreaText(String text) {
+        inputArea.setText(text);
+    }
 }

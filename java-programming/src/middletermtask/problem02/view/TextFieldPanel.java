@@ -21,4 +21,8 @@ public class TextFieldPanel extends JPanel {
     public String getInputFieldText() {
         return inputField.getText();
     }
+
+    public void setInputFieldText(String text) {
+        inputField.setText(text);
+    }
 }
