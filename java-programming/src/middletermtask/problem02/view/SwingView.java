@@ -20,6 +20,7 @@ public class SwingView extends JFrame {
 
     public SwingView() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setTitle("Address Book");
         setSize(CONTAINER_WIDTH, CONTAINER_HEIGHT);
         container = getContentPane();
         container.setLayout(new FlowLayout());
