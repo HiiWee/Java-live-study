@@ -27,6 +27,9 @@ public class AddressBookService {
      * 없다면 정상 인스턴스 반환
      */
     public Person searchPerson(String name) {
+        if (name.equals("")) {
+            return new Person(UtilMessages.NO_PERSON_NAME, UtilMessages.HAS_ERROR, "");
+        }
         Person findPerson = addressBookRepository.findByName(name);
         if (findPerson == null) {
             return new Person(UtilMessages.NO_PERSON, UtilMessages.HAS_ERROR, "");
