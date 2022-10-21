@@ -21,7 +21,7 @@ public class TenLabelClick extends JFrame {
 
         for (int i = 0; i < 10; i++) {
             gameLabels[i] = new JLabel(Integer.toString(i));
-            gameLabels[i].setOpaque(true);
+            gameLabels[i].setOpaque(false);
             gameLabels[i].setForeground(Color.magenta);
             gameLabels[i].setLocation(getRandomNum(MAX_COORDINATE), getRandomNum(MAX_COORDINATE));
             gameLabels[i].setSize(15, 15);
