@@ -124,11 +124,11 @@ public class CScan extends Thread {
 
 class RandomTrackThread extends Thread {
     private int time;
-    private CScan CScan;
+    private CScan cScan;
 
     public RandomTrackThread(final int time, final CScan CScan) {
         this.time = time;
-        this.CScan = CScan;
+        this.cScan = CScan;
     }
 
     @Override
@@ -138,7 +138,7 @@ class RandomTrackThread extends Thread {
             int randomTrackValue = RandomGenerator.getRandomNumberInRange(0, MAX_TRACK_INDEX);
             try {
                 Thread.sleep(randomBreakTime);
-                CScan.addValue(randomTrackValue);
+                cScan.addValue(randomTrackValue);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
