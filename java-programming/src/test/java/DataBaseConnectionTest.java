@@ -7,7 +7,7 @@ class DataBaseConnectionTest {
     @Test
     void connection() {
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/pos", "hoseok", "1234");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/java2-jdbc", "hoseok", "1234");
 
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("show databases");
