@@ -6,7 +6,7 @@ import javax.swing.*;
 
 class SnakeLabel extends JLabel {
     public static final int BODY_SIZE = 35;
-    private final String PREFIX = "src/middletermtask/problem03/images/";
+    private final String PREFIX = "src/main/java/middletermtask/problem03/images/";
     private Direction direction = Direction.EAST; // 초기값
 
     public SnakeLabel(String part) {
