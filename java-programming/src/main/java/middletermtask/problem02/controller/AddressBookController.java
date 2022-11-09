@@ -77,10 +77,7 @@ public class AddressBookController implements ActionListener {
      * 인스턴스에 예외가 존재하는지 확인
      */
     private boolean hasException(Person savePerson) {
-        if (savePerson.getPhone().equals(UtilMessages.HAS_ERROR)) {
-            return true;
-        }
-        return false;
+        return savePerson.getPhone().equals(UtilMessages.HAS_ERROR);
     }
 
     /**
