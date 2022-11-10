@@ -1,10 +1,13 @@
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.HashSet;
 import java.util.Set;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 class SetTest {
     private Set<Integer> numbers;
@@ -28,5 +31,17 @@ class SetTest {
 
         // then
         assertThat(numbersSize).isEqualTo(3);
+    }
+
+    // JUnit의 ParameterizedTest를 활용해 1, 2, 3에 대한 Set.contains() 메소드를 테스트하자
+
+    @ParameterizedTest
+    @ValueSource(ints = {1, 2, 3})
+    @DisplayName("Set.contains() 메소드를 테스트")
+    void contains_set_내부에_존재하는_데이터확인(int number) {
+        // given
+        // when
+        // then
+        assertTrue(numbers.contains(number));
     }
 }
