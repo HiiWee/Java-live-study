@@ -39,4 +39,21 @@ class StringTest {
         // then
         assertThat(numberWithoutBracket).isEqualTo("1,2");
     }
+
+    @Test
+    @DisplayName("String.charAt() 메소드를 활용해 특정 위치의 문자열을 가져오고, 위치값을 벗어나면 예외 발생하는 테스트")
+    void charAt_지정된_위치_문자열_가져오고_범위를_벗어나면_예외_발생() {
+        // given
+        String alphabet = "abc";
+
+        // when
+        // then
+        assertAll(() -> {
+            assertThat(alphabet.charAt(0)).isEqualTo('a');
+            assertThat(alphabet.charAt(1)).isEqualTo('b');
+            assertThat(alphabet.charAt(2)).isEqualTo('c');
+            assertThatThrownBy(() -> alphabet.charAt(3))
+                    .isInstanceOf(StringIndexOutOfBoundsException.class);
+        });
+    }
 }
