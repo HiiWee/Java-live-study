@@ -26,4 +26,17 @@ class StringTest {
             assertThat(splitSingleNumber).containsExactly("1");
         });
     }
+
+    @Test
+    @DisplayName("(1,2)의 값이 주어졌을때 String의 substring() 메소드를 활용해 ()을 제거한 값을 반환하는 테스트")
+    void substring_괄호제거하고_올바른_문자열값_반환_성공() {
+        // given
+        String bracketNumber = "(1,2)";
+
+        // when
+        String numberWithoutBracket = bracketNumber.substring(1, 4);
+
+        // then
+        assertThat(numberWithoutBracket).isEqualTo("1,2");
+    }
 }
