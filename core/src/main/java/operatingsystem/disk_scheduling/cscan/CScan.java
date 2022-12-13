@@ -23,12 +23,10 @@ public class CScan extends Thread {
     private final List<Integer> left = new ArrayList<>();
     private final PriorityQueue<Integer> right = new PriorityQueue<>();
     private int headValue;
-    private String direction;
     private int distance;
 
-    public CScan(final int headValue, String direction) {
+    public CScan(final int headValue) {
         this.headValue = headValue;
-        this.direction = direction;
     }
 
     @Override
@@ -66,7 +64,11 @@ public class CScan extends Thread {
         if (!right.isEmpty()) {
             System.out.println("\n change\n");
             startRightScan();
+            return;
         }
+        distance += MAX_TRACK_INDEX - headValue;
+        System.out.println(headValue + " -> " + MAX_TRACK_INDEX + " = " + distance);
+        headValue = MAX_TRACK_INDEX;
     }
 
 
@@ -113,7 +115,6 @@ public class CScan extends Thread {
     public void addValue(final int randomTrackValue) {
         System.out.println("input random value: " + randomTrackValue);
         if (headValue < randomTrackValue) {
-//            System.out.println("pass");
             right.add(randomTrackValue);
             return;
         }
@@ -146,10 +147,8 @@ class RandomTrackThread extends Thread {
 }
 
 class Application {
-    public static final String RIGHT = "right";
-
     public static void main(String[] args) throws InterruptedException {
-        CScan CScan = new CScan(50, RIGHT);
+        CScan CScan = new CScan(50);
         RandomTrackThread randomTrackThread = new RandomTrackThread(10, CScan);
         List<Integer> input = List.of(105, 180, 40, 120, 10, 125, 65, 70);
         CScan.initializeValue(input);

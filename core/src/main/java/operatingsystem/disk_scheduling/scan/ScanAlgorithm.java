@@ -57,6 +57,7 @@ public class ScanAlgorithm extends Thread {
             printMovingStatus(previewHeadValue);
             Thread.sleep(400);
         }
+        // 3줄 지우면 Look
         distance += headValue;
         System.out.println(headValue + " -> " + 0 + " = " + distance);
         headValue = 0;
@@ -76,6 +77,7 @@ public class ScanAlgorithm extends Thread {
             printMovingStatus(previewHeadValue);
             Thread.sleep(400);
         }
+        // 3줄 지우면 Look
         distance += Math.abs(MAX_TRACK_INDEX - headValue);
         System.out.println(headValue + " -> " + MAX_TRACK_INDEX + " = " + distance);
         headValue = MAX_TRACK_INDEX;
