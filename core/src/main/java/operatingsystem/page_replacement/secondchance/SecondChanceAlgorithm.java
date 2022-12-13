@@ -1,4 +1,4 @@
-package operatingsystem.secondchance;
+package operatingsystem.page_replacement.secondchance;
 
 import java.util.ArrayList;
 import java.util.List;
