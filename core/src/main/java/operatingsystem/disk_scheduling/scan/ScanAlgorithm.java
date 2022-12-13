@@ -1,6 +1,6 @@
-package operatingsystem.scan;
+package operatingsystem.disk_scheduling.scan;
 
-import static operatingsystem.scan.ScanAlgorithm.MAX_TRACK_INDEX;
+import static operatingsystem.disk_scheduling.scan.ScanAlgorithm.MAX_TRACK_INDEX;
 
 import java.util.Collections;
 import java.util.List;
